@@ -42,7 +42,7 @@
                         <td>{{ application.created_at }}</td>
                         <td>
                             <span>
-                                <form method="post" action="">
+                                <form method="post" action="{% url 'decide' application.id%}">
                                     {% csrf_token %}
                                     <select name="status"  {% if application.status != 'APPLIED' %} disabled {% endif %}>
                                         <option value='APPLIED' {% if application.status == 'APPLIED' %} selected {% endif %}>APPLIED</option>
